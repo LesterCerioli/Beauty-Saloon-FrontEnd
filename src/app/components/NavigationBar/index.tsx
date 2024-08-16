@@ -17,7 +17,7 @@ export function NavigationBar(){
                 <Link className={pathname == "/" || "/home" ? "flex items-center justify-evenly text-btn-primary-color" : "flex items-center justify-evenly text-zinc-400"} href="/home">
                     <MdHomeFilled size={24} />
                 </Link>
-                <Link className={pathname == "/nearby" ? "flex items-center justify-evenly text-btn-primary-color" : "flex items-center justify-evenly text-zinc-400"} href="#">
+                <Link className={pathname == "/GeoLocation" ? "flex items-center justify-evenly text-btn-primary-color" : "flex items-center justify-evenly text-zinc-400"} href="GeoLocation">
                     <FaCompass  size={24} />
                 </Link>
                 <Link className={pathname == "/appointment" ? "flex items-center justify-evenly text-btn-primary-color" : "flex items-center justify-evenly text-zinc-400"} href="#">

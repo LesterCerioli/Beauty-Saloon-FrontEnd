@@ -10,6 +10,8 @@ import { HeaderLocation } from "../../components/Location-DropDown";
 import { MdErrorOutline } from "react-icons/md";
 import { IoReloadCircle } from "react-icons/io5";
 import { FaLocationCrosshairs } from "react-icons/fa6";
+import Image from "next/image";
+import Link from "next/link";
 
 const GeoLocation: NextPage = () => {
     const [saloes, setSaloes] = useState<Salao[]>([]);
@@ -89,6 +91,9 @@ const GeoLocation: NextPage = () => {
                             <img
                                 src={salao.foto}
                                 alt={salao.nomeFantasia}
+                                // layout="responsive"
+                                // width={500}
+                                // height={128}
                                 className="w-full h-32 object-cover rounded-lg"
                             />
                             <h1 className="text-xl text-gray-500 flex items-center gap-2 border-b-color-secundaria border-b-2">
@@ -107,6 +112,7 @@ const GeoLocation: NextPage = () => {
                             </p>
                             <button
                                 type="submit"
+                                //href="#"
                                 className="border border-transparent px-4 py-2 rounded-xl flex items-center gap-2 bg-color-secundaria text-white"
                             >
                                 Acessar Salão <IoEnterOutline />
