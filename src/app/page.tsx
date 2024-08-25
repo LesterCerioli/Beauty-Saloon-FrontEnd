@@ -1,4 +1,4 @@
-import Home from "./home/page";
+import Home from "./pages/home/page";
 // import { OnBoarding } from "./OnBoarding/page";
 
 

@@ -9,10 +9,10 @@ import banner from "@/assets/example_saloon.jpeg"
 import { images } from "@/constants/carouselPlaceholderConstants";
 
 import { serviceList } from "@/constants/serviceConstants";
-import { ServiceButton } from "../components/ServiceButton";
+import { ServiceButton } from "../../components/ServiceButton";
 import Link from "next/link";
 import { responsive } from "@/constants/carouselSizeConstants";
-import { SaloonCardDetails } from "../components/SaloonCardDetails";
+import { SaloonCardDetails } from "../../components/SaloonCardDetails";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Servico{
