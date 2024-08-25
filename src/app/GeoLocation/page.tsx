@@ -6,7 +6,7 @@ import { fetchSaloes, Salao } from "../../apiteste";
 import { TiScissorsOutline } from "react-icons/ti";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { SiGooglemaps } from "react-icons/si";
-import { HeaderLocation } from "../../components/Location-DropDown";
+import { HeaderLocation } from "../components/Location-DropDown";
 import { MdErrorOutline } from "react-icons/md";
 import { IoReloadCircle } from "react-icons/io5";
 import { FaLocationCrosshairs } from "react-icons/fa6";
