@@ -1,3 +1,4 @@
+import { cp } from "fs";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -7,7 +8,15 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'mobile-sm': '375px',
+    },
     extend: {
+      colors: {
+        'btn-primary-color': '#156778',
+        'color-principal': '#F6F6F6',
+        'color-secundaria': '#B300FF',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
