@@ -1,14 +1,9 @@
-import Home from "./pages/home/page";
-// import { OnBoarding } from "./OnBoarding/page";
+import { ThemeProvider } from './contexts/Themes/ThemeContext';
+import Home from './home/page';
 
 
-
-export default function app() {
+export default function App() {
   return (
-    <>
-      <Home />
-      {/* <h1>Index</h1> */}
-      
-    </>
+    <Home />
   );
 }
