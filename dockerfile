@@ -1,35 +1,35 @@
-# Use uma imagem oficial do Node.js como imagem base
+# Use an official Node.js image as the base image
 FROM node:18-alpine AS builder
 
-# Defina o diretório de trabalho dentro do contêiner
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copie o package.json e o package-lock.json para o contêiner
+# Copy package.json and package-lock.json into the container
 COPY package.json package-lock.json ./
 
-# Instale as dependências
+# Install dependencies
 RUN npm install
 
-# Copie todo o código-fonte da aplicação para o contêiner
+# Copy all the application source code into the container
 COPY . .
 
-# Construa a aplicação Next.js
+# Build the Next.js application
 RUN npm run build
 
-# Use uma imagem oficial do Node.js como imagem base para o ambiente de produção
+# Use an official Node.js image as the base image for the production environment
 FROM node:18-alpine AS runner
 
-# Defina o diretório de trabalho dentro do contêiner
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copie os arquivos necessários do estágio de build para o estágio de produção
+# Copy necessary files from the build stage to the production stage
 COPY --from=builder /app/package.json /app/package-lock.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 
-# Exponha a porta que a aplicação Next.js irá rodar
+# Expose the port that the Next.js application will run on
 EXPOSE 3000
 
-# Comando para iniciar a aplicação Next.js
+# Command to start the Next.js application
 CMD ["npm", "start"]
