@@ -33,29 +33,29 @@ jobs:
       run: npm run lint
 
     - name: Run tests
-      
-      run: cd test/ && npm run test 
+      run: npm run test -- test/ # This points to your test directory
 
     - name: Build project
       run: npm run build
 
-    #- name: Upload production build artifacts
-      #uses: actions/upload-artifact@v3
-      #with:
-        #name: next-build
-        #path: .next
+    # Uncomment if needed to upload build artifacts
+    # - name: Upload production build artifacts
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: next-build
+    #     path: .next
 
-  #deploy:
-    #runs-on: ubuntu-latest
-    #needs: build
-    #steps:
-    #- name: Download build artifact
-      #uses: actions/download-artifact@v3
-      #with:
-        #name: next-build
-        #path: .next
-
-    #- name: Deploy to production
-      #run: |
-        #echo "Deploying the build to production..."
-        # Add your deployment script here, e.g., `scp` or using a cloud provider's CLI
+  # Uncomment if needed to deploy
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #   - name: Download build artifact
+  #     uses: actions/download-artifact@v3
+  #     with:
+  #       name: next-build
+  #       path: .next
+  #   - name: Deploy to production
+  #     run: |
+  #       echo "Deploying the build to production..."
+  #       # Add your deployment script here
