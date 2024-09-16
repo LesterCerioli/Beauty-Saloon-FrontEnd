@@ -1,0 +1,20 @@
+/* styles/BeautySalonForm.module.css */
+form {
+    @apply flex flex-col gap-4 max-w-md mx-auto p-4 border border-gray-300 rounded-lg bg-white;
+  }
+  
+  label {
+    @apply font-bold;
+  }
+  
+  input, textarea {
+    @apply p-2 border border-gray-300 rounded-md;
+  }
+  
+  button {
+    @apply p-2 border-none rounded-md bg-blue-500 text-white cursor-pointer;
+  }
+  
+  button:hover {
+    @apply bg-blue-700;
+  }

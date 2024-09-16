@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useState } from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
-export const WorkerRegistration: NextPage = () =>{
+const WorkerRegistration: NextPage = () =>{
     const [nomeAtendente, setNomeAtendente] = useState("");
     const [emailAtendente, setEmailAtendente] = useState('');
     const [senhaAtendente, setSenhaAtendente] = useState('');
@@ -56,3 +56,5 @@ export const WorkerRegistration: NextPage = () =>{
         </main>
     );
 }
+
+export default WorkerRegistration;

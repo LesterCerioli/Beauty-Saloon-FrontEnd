@@ -8,6 +8,16 @@
       {
         "button-name": "off"
       }
+    ],
+<<<<<<< HEAD
+    "typescript-config/consistent-casing": "off"
+=======
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
     ]
+>>>>>>> origin/dev2
   }
 }
