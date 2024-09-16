@@ -1,9 +1,20 @@
-import { Home } from "./pages/home";
+import { Home } from 'lucide-react';
+import PageConfigForm from './components/Cms/PageConfigForm';
 
-export default function app() {
+
+
+import { ThemeProvider } from './contexts/Themes/ThemeContext';
+
+
+
+
+
+export default function App() {
   return (
-    <>
-      <Home />
-    </>
+    //<Login />
+    <Home />
+    //<PageConfigForm />
+    //<ForgotPassword />
+    
   );
 }

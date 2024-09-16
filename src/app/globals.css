@@ -14,3 +14,7 @@ body {
   height: 100vh;
   margin: 0 auto;
 }
+
+form{
+  height: 100vh;
+}
