@@ -17,8 +17,11 @@
         "name": "next"                       // Enables Next.js specific TypeScript features
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]                     // Maps '@/' to the 'src' directory for module resolution
+      "@/*": ["./src/*"],
+      "@services/*": ["services/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": [

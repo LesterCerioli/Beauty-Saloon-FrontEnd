@@ -1,11 +1,20 @@
-import Login from './components/Login';
+import { Home } from 'lucide-react';
+import PageConfigForm from './components/Cms/PageConfigForm';
+
+
+
 import { ThemeProvider } from './contexts/Themes/ThemeContext';
-import Home from './home/page';
+
+
+
 
 
 export default function App() {
   return (
-    <Login />
-    // <Home />
+    //<Login />
+    <Home />
+    //<PageConfigForm />
+    //<ForgotPassword />
+    
   );
 }

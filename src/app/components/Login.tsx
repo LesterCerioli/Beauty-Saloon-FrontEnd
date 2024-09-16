@@ -1,19 +1,21 @@
 "use client";
-import React from 'react';
+
+import React, { useState } from 'react';  // Adicionei useState para gerenciar o estado de troca de tela
 import { IoMailSharp } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 import { FaUnlockAlt } from "react-icons/fa";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Link from 'next/link';
+import ForgotPassword from './ForgotPassword';  // Importe o componente de recuperação de senha
 
 type FormValues = {
   email: string;
   password: string;
-  forgotPassword: boolean;
 };
 
 const Login: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+  const [isForgotPassword, setIsForgotPassword] = useState(false);  // Estado para gerenciar se o usuário está na tela de recuperação
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
@@ -24,12 +26,19 @@ const Login: React.FC = () => {
     event?.preventDefault();
   }
 
+  // Se o estado `isForgotPassword` for verdadeiro, renderiza o componente de recuperação de senha
+  if (isForgotPassword) {
+    return <ForgotPassword />;
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <form onSubmit={handleSubmit(onSubmit)} className="">
           <h2 className="mb-2 text-2xl font-bold text-left">Seja Bem-vindo!</h2>
-          <p className="mb-28 text-xs text-[#50555C]">É muito bom que esteja aqui conosco novamente! Por favor, faça login no aplicativo.</p>
+          <p className="mb-28 text-xs text-[#50555C]">
+            É muito bom que esteja aqui conosco novamente! Por favor, faça login no aplicativo.
+          </p>
 
           <div className='flex flex-col items-center mb-4'>
             <div className='flex w-full'>
@@ -69,15 +78,15 @@ const Login: React.FC = () => {
             {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
           </div>
 
-          <div className="flex items-center justify-between mb-20">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                {...register('forgotPassword')}
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              />
-              <span className="ml-2 text-sm text-gray-600">Esqueci minha senha</span>
-            </label>
+          
+          <div className="flex justify-end mb-4">
+            <button
+              type="button"
+              onClick={() => setIsForgotPassword(true)}  // Quando o link é clicado, altera o estado para mostrar a tela de recuperação
+              className="text-sm text-indigo-600 hover:text-indigo-900"
+            >
+              Esqueci minha senha
+            </button>
           </div>
 
           <div className="flex items-center justify-center">
